@@ -4,7 +4,6 @@
   <template>
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
     <style>
-      @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
       :host {
         display: block;
         font-family: 'Press Start 2P', cursive;
@@ -21,17 +20,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 200px;
       }
       .score button{
-        width: 80%;
+        width: 60%;
         font-size: 30px;
       }
     </style>
     <div class="container">
+      <h1>Score</h1>
       <div class="score">
         <button disabled class="nes-btn">
-          <span class="nes-text is-primary">Score: [[score]]</span>
+          <span class="nes-text is-disabled">[[score]]</span>
         </button>
       </div>
     </div>
