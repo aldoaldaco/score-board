@@ -1,0 +1,64 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="score-board">
+  <template>
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+      :host {
+        display: block;
+        font-family: 'Press Start 2P', cursive;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .score {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 200px;
+      }
+      .score button{
+        width: 80%;
+        font-size: 30px;
+      }
+    </style>
+    <div class="container">
+      <div class="score">
+        <button disabled class="nes-btn">
+          <span class="nes-text is-primary">Score: [[score]]</span>
+        </button>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    /**
+     * `score-board`
+     * score board to show score of game
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class ScoreBoard extends Polymer.Element {
+      static get is() { return 'score-board'; }
+      static get properties() {
+        return {
+          score: {
+            type: Number,
+            value: 0
+          }
+        };
+      }
+    }
+
+    window.customElements.define(ScoreBoard.is, ScoreBoard);
+  </script>
+</dom-module>
